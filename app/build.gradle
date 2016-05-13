@@ -19,7 +19,7 @@ android {
     }
 
     buildTypes.each {
-        it.buildConfigField 'String', 'API_SOUNDCLOUD', '\"167b67d8a42c3b03447e07da0b829b5d\"'
+        it.buildConfigField 'String', 'API_SOUNDCLOUD', '\"YOUR_API_KEY_HERE\"'
         it.buildConfigField 'String', 'API_URL', '\"https://api.soundcloud.com\"'
     }
 }

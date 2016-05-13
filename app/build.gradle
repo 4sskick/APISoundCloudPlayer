@@ -2,7 +2,7 @@ apply plugin: 'com.android.application'
 
 android {
     compileSdkVersion 23
-    buildToolsVersion "23.0.2"
+    buildToolsVersion "23.0.3"
 
     defaultConfig {
         applicationId "tutorial.androdev.apisoundcloudplayer"
@@ -13,17 +13,30 @@ android {
     }
     buildTypes {
         release {
-            minifyEnabled false
+            minifyEnabled true
             proguardFiles getDefaultProguardFile('proguard-android.txt'), 'proguard-rules.pro'
         }
+    }
+
+    buildTypes.each {
+        it.buildConfigField 'String', 'API_SOUNDCLOUD', '\"167b67d8a42c3b03447e07da0b829b5d\"'
+        it.buildConfigField 'String', 'API_URL', '\"https://api.soundcloud.com\"'
     }
 }
 
 dependencies {
     compile fileTree(dir: 'libs', include: ['*.jar'])
     testCompile 'junit:junit:4.12'
-    compile 'com.android.support:appcompat-v7:23.1.1'
-    compile 'com.google.code.gson:gson:2.3.1'
-    compile 'com.squareup.retrofit:retrofit:1.8.0'
+    compile 'com.android.support:appcompat-v7:23.3.0'
+
+    //retrofit
+    compile 'com.squareup.retrofit2:retrofit:2.0.0'
+    //convert json data
+    compile 'com.squareup.retrofit2:converter-gson:2.0.0'
+    //image loader
     compile 'com.squareup.picasso:picasso:2.4.0'
+    //card view
+    compile 'com.android.support:cardview-v7:23.3.0'
+    //recycler view
+    compile 'com.android.support:recyclerview-v7:23.3.0'
 }

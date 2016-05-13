@@ -1,9 +1,10 @@
-package tutorial.androdev.apisoundcloudplayer;
+package tutorial.androdev.apisoundcloudplayer.model;
 
 import com.google.gson.annotations.SerializedName;
 
 /**
- * Created by Administrator on 23-Feb-16.
+ * Created by Septian on 23-Feb-16.
+ * edited on 14-May-16
  * code to grab the data from JSON and create a Track object
  */
 public class Track {
@@ -24,6 +25,9 @@ public class Track {
     @SerializedName("artwork_url")
     private String mArtworkUrl;
 
+    @SerializedName("genre")
+    private String mGenre;
+
     public String getTitle(){
         return mTitle;
     }
@@ -38,6 +42,10 @@ public class Track {
 
     public String getArtworkUrl(){
         return mArtworkUrl;
+    }
+
+    public String getGenre(){
+        return mGenre;
     }
 
 }
